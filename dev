@@ -1,0 +1,12 @@
+[loadbalancer]
+ansible-1
+
+[database]
+ansible-2
+
+[webserver]
+ansible-3
+ansible-4
+
+[control]
+ubuntu-xenial ansible_connection=local
