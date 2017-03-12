@@ -6,3 +6,26 @@ $ sudo apt-get update
 $ sudo apt-get install ansible
 
 
+1. Install & Setup Database server using: 
+
+$ ansible-playbook database.yml -i dev
+
+2. Install & Setup Webserver running apache2
+
+$ ansible-playbook webserver.yml -i dev
+
+3. Install & Setup loadbalancer 
+
+$ ansible-playbook loadbalancer.yml -i dev 
+
+
+Optional Steps: 
+
+1. Restart Stack using  
+
+$ ansible-playbook stack_restart.yml -i dev 
+
+2. Check Stack status using 
+
+$ ansible-playbook stack_status.yml -i dev 
+
