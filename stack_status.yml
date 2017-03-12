@@ -5,6 +5,10 @@
     - name: verify nginx service 
       command: service nginx status
 
+    #Bydefault timeout is 300s
+    -name: verify nginx is listening on 80
+     wait_for: port=80 timeout=1
+
 
 - hosts: webserver
   become: true
@@ -12,9 +16,15 @@
     - name: verify apache2 service 
       command: service apache2 status
 
+    -name: verify apache2 is listening on 80
+     wait_for: port=80 timeout=1  
+
 
 - hosts: database
   become: true
   tasks: 
     - name: verify mysql service 
       command: service mysql status
+
+    -name: verify mysql is listening on 3306
+     wait_for: port=3306 timeout=1
