@@ -43,7 +43,7 @@
 
     - name: verify end-to-end db response
       uri: url=http://{{item}}/db return_content=yes
-      with_items: groups.loadbalancer
+      with_items: "{{groups['loadbalancer']}}"
       register: lb_db
 
     - fail: msg="db failed to return content"
@@ -64,7 +64,7 @@
 
     - name: verify backend db response
       uri: url=http://{{item}}/db return_content=yes
-      with_items: groups.webserver
+      with_items: "{{groups['webserver']}}"
       register: app_db
 
     - fail: msg="db failed to return content"
