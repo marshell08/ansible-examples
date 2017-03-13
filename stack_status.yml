@@ -5,7 +5,7 @@
     - name: verify nginx service 
       command: service nginx status
 
-    #Bydefault timeout is 300s
+    #Bydefault timeout is 300 seconds
     - name: verify nginx is listening on 80
       wait_for: port=80 timeout=1
 
